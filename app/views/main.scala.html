@@ -1,0 +1,32 @@
+@(title: String)(content: Html)
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/style.css")">
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-1.10.2.js")"></script>
+		<script type="text/javascript" src="@routes.Assets.at("javascripts/d3.js")"></script>
+		<script type="text/javascript" src="@routes.Assets.at("javascripts/data.json")"></script>
+		<script type="text/javascript" src="@routes.Assets.at("javascripts/map1.js")"></script>
+    </head>
+    <body>
+        <div id="header">
+			<div id="header-content">
+				<div id="himg_home">
+				</div>
+				<div id="htxt">Insurance BigData Generator</div>
+				<div id="menu">
+					<a href="@controllers.routes.Application.index()">Home</a>
+				 	<a href="@controllers.routes.Persons.generateForm()">Generator</a>
+				 	<a href="@controllers.routes.Persons.add()">Add</a> 
+				 	<a href="@controllers.routes.Persons.show()">Database</a> 	
+				</div>
+			</div>
+		</div>
+		
+		<div>
+			@content
+		</div>
+    </body>
+</html>

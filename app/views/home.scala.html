@@ -1,0 +1,19 @@
+@()(implicit lang: Lang)
+
+@main("Home") {
+		<div id="content">
+			<div id="textContent">
+				<h1>Welcome to the Insurance Big Data Generator!</h1> 
+				<p style="margin-left: 30px;">What you want to do?</p>
+				<p>
+				</p
+				><ul style="margin-left: 40px;">
+					<li><a href="@controllers.routes.Persons.generate">I want to automatically generate big amount of data.</a></li>
+					<li><a href="@controllers.routes.Persons.add">I want to manually add data to database.</a></li>
+					<li><a href="@controllers.routes.Persons.show">I want to see what's in database.</a></li>
+				</ul>
+			</div>
+		</div>
+	
+	
+	}

@@ -1,0 +1,87 @@
+@(personForm: Form[(String,String,String,org.joda.time.DateTime,String,org.joda.time.DateTime,org.joda.time.DateTime,String,String,Int,Int)])(implicit lang: Lang) 
+
+@main(Messages("persons.add")) {
+	
+	
+	<div id="content">
+		<div id="map">
+
+		</div>
+	<div id="formDiv">
+		<form id="addForm" name="personForm" method="post" action="@controllers.routes.Persons.addForm()">
+			<table class="formTable">
+				<tbody>
+					<tr>
+						<td>Name</td>
+						<td><input name="name" type="text"></td>
+					</tr>
+					<tr>
+						<td>Surname</td>
+						<td><input name="lastName" type="text"></td>
+					</tr>
+					<tr>
+						<td>Sex</td>
+						<td>Male<input name="sex" value="male" checked="checked"
+							type="radio"> Female<input name="sex" value="female"
+							type="radio"></td>
+					</tr>
+					<tr>
+						<td>Date of birth</td>
+						<td><input name="dateOfBirth" type="date"></td>
+					</tr>
+					<!--<tr>
+							<td>Personal identity number</td>
+							<td><input type="text" name="pin" /></td>
+						</tr> -->
+					<tr>
+						<td>Civil status</td>
+						<td><select name="civilStatus">
+								<option selected value="Single">Single</option>
+								<option value="Married">Married</option>
+								<option value="Widowed">Widowed</option>
+								<option value="Separated">Separated</option>
+								<option value="Divorced">Divorced</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>Date of sign insurance</td>
+						<td><input name="dateOfInsuranceSigning" type="date"></td>
+					</tr>
+					<tr>
+						<td>Date of insurance end</td>
+						<td><input name="dateOfInsuranceEnding" type="date"></td>
+					</tr>
+					<tr>
+						<td>Location</td>
+						<td><input name="location" id="location_input"
+							value="Select location on the map"
+							type="text"></td>
+					</tr>
+					<tr>
+						<td>Type of insurance</td>
+						<td><select name="insuranceType">
+								<option selected="selected" value="Health">Health</option>
+								<option value="Life">Life</option>
+								<option value="Casualty">Casualty</option>
+								<option value="Car">Car</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>Insurance premium</td>
+						<td><input name="insurancePremium" type="text"> €</td>
+					</tr>
+					<tr>
+						<td>Insurance value</td>
+						<td><input name="insuranceValue" type="text"> €</td>
+					</tr>
+				</tbody>
+			</table>
+			<input value="Add" type="submit"> <input value="Reset"
+				type="reset">
+		</form>
+	</div>
+</div>
+			<script type="text/javascript">
+				draw2();
+			</script>
+}

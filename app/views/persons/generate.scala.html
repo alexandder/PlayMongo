@@ -1,0 +1,17 @@
+@(generateForm: Form[Int])(implicit lang: Lang)
+
+@import helper._
+
+@main(Messages("persons.generate")) {
+	 
+	@form(action = routes.Persons.generateForm()) {
+			@inputText(
+				field = generateForm("number"),
+				args = '_label -> Messages("persons.generate.number")
+				)
+			<p>
+				<input type="submit" value='@Messages("persons.generate.submit")' />
+			</p>	
+		}
+	
+	}
