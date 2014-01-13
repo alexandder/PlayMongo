@@ -67,7 +67,7 @@ object Generator {
     def generateInsurancePremium(): Double = (math rint (15000 + random.nextGaussian * 5000) * 100) / 100
 
     //
-    def generateInsuranceValue(insurancePremium: Double): Double = (math rint (20 * random.nextDouble * insurancePremium) * 100 ) / 100
+    def generateInsuranceValue(insurancePremium: Double): Double = (math rint (5 * (random.nextInt(5) + 1) * insurancePremium) * 100 ) / 100
 
     // preparing values for object's fields
     val sexNamePair = generateSexAndNamePair(random.nextInt(2))

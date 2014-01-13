@@ -4,11 +4,9 @@
 
 @main(Messages("persons.generate")) {
 	 
-	@form(action = routes.Persons.generateForm()) {
-			@inputText(
-				field = generateForm("number"),
-				args = '_label -> Messages("persons.generate.number")
-				)
+	@helper.form(action = routes.Persons.generateForm()) {
+			@helper.inputText(generateForm("number"), '_label -> Messages("persons.generate.number"), '_showConstraints -> false)
+		
 			<p>
 				<input type="submit" value='@Messages("persons.generate.submit")' />
 			</p>	
